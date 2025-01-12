@@ -1,17 +1,15 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.css'
-import { Button } from './components/Button'
+
+import { SidebarClass1 } from './components/BasicProject.jsx'
 function App() {
   
 
   return (
-    <>
-   <Button> Sign up </Button>
-   
-    </>
-  )
+   <div>
+    <SidebarClass1/>
+   </div>
+  ) 
 }
 
 export default App
