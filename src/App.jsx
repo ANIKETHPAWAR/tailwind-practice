@@ -1,7 +1,7 @@
 
 import { useState } from 'react'
 import './App.css'
-
+import { SidebarToggle } from './components/icons/SidebarToggle.jsx';
 import { SidebarClass1 } from './components/BasicProject.jsx'
 function App() {
   
@@ -14,7 +14,16 @@ const[sideBarOpen,setSidebarOpen] = useState(true);
   )  
 }
 function SideBar({sideBarOpen,setSidebarOpen}){
-  return <div className='h-screen w-64 bg-blue-50'></div>
+if(!sideBarOpen){
+  return <div className='fixed top-0 left-2'>
+    <div className='cursor-pointer hover:bg-slate-400' onClick={() => {setSidebarOpen(!sideBarOpen)}}><SidebarToggle/></div>
+  </div>
+}
+  return <div className='h-screen w-64 bg-blue-50'>
+    <div>
+      <div className='cursor-pointer hover:bg-slate-400' onClick={() => {setSidebarOpen(!sideBarOpen)}}><SidebarToggle/></div>
+    </div>
+  </div>
 }
 function MainContent(){
   return <div className='w-full'>
